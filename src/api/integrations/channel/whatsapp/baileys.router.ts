@@ -1,7 +1,7 @@
 import { RouterBroker } from '@api/abstract/abstract.router';
 import { InstanceDto } from '@api/dto/instance.dto';
 import { HttpStatus } from '@api/routes/index.router';
-import { baileysController } from '@api/server.module';
+import { whatsmeowController } from '@api/server.module';
 import { instanceSchema } from '@validate/instance.schema';
 import { RequestHandler, Router } from 'express';
 
@@ -14,7 +14,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.onWhatsapp(instance, req.body),
+          execute: (instance) => whatsmeowController.onWhatsapp(instance, req.body),
         });
 
         res.status(HttpStatus.OK).json(response);
@@ -24,7 +24,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.profilePictureUrl(instance, req.body),
+          execute: (instance) => whatsmeowController.profilePictureUrl(instance, req.body),
         });
 
         res.status(HttpStatus.OK).json(response);
@@ -34,7 +34,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.assertSessions(instance, req.body),
+          execute: (instance) => whatsmeowController.assertSessions(instance, req.body),
         });
 
         res.status(HttpStatus.OK).json(response);
@@ -44,7 +44,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.createParticipantNodes(instance, req.body),
+          execute: (instance) => whatsmeowController.createParticipantNodes(instance, req.body),
         });
 
         res.status(HttpStatus.OK).json(response);
@@ -54,7 +54,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.getUSyncDevices(instance, req.body),
+          execute: (instance) => whatsmeowController.getUSyncDevices(instance, req.body),
         });
 
         res.status(HttpStatus.OK).json(response);
@@ -64,7 +64,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.generateMessageTag(instance),
+          execute: (instance) => whatsmeowController.generateMessageTag(instance),
         });
 
         res.status(HttpStatus.OK).json(response);
@@ -74,7 +74,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.sendNode(instance, req.body),
+          execute: (instance) => whatsmeowController.sendNode(instance, req.body),
         });
 
         res.status(HttpStatus.OK).json(response);
@@ -84,7 +84,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.signalRepositoryDecryptMessage(instance, req.body),
+          execute: (instance) => whatsmeowController.signalRepositoryDecryptMessage(instance, req.body),
         });
 
         res.status(HttpStatus.OK).json(response);
@@ -94,7 +94,7 @@ export class BaileysRouter extends RouterBroker {
           request: req,
           schema: instanceSchema,
           ClassRef: InstanceDto,
-          execute: (instance) => baileysController.getAuthState(instance),
+          execute: (instance) => whatsmeowController.getAuthState(instance),
         });
 
         res.status(HttpStatus.OK).json(response);
